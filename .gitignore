@@ -216,6 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+<<<<<<< HEAD
 
 # Database files
 *.duckdb
@@ -223,3 +224,5 @@ __marimo__/
 # OS files
 .DS_Store
 Thumbs.db
+=======
+>>>>>>> 3d306db8ab781de22b79ae5b0a033b2d52ceeae4
