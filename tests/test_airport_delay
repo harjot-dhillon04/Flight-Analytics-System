@@ -1,0 +1,68 @@
+import os
+import json
+
+BASE_PATH = "raw_data_airport_delay"
+
+def delay_to_minutes(delay_str):
+    sign = -1 if delay_str.startswith("-") else 1
+    h, m, s = delay_str.replace("-", "").split(":")
+    return sign * (int(h)*60 + int(m))
+
+def compute_airport_avg(folder_path, airport_code):
+    total_delay = 0
+    total_flights = 0
+
+    for file in os.listdir(folder_path):
+        if not file.endswith(".json"):
+            continue
+
+        with open(os.path.join(folder_path, file), "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        for entry in data:
+            dep = entry.get("departuresDelayInformation", {})
+
+            delay_str = dep.get("medianDelay")
+            num = dep.get("numTotal")
+
+            if not delay_str or not num:
+                continue
+
+            delay_min = delay_to_minutes(delay_str)
+
+            total_delay += delay_min * num
+            total_flights += num
+
+    if total_flights == 0:
+        return None
+
+    return {
+        "airport": airport_code,
+        "avg_delay": round(total_delay / total_flights, 2),
+        "total_flights": total_flights
+    }
+
+
+def compute_all_airports():
+    results = []
+
+    for airport_code in os.listdir(BASE_PATH):
+        folder = os.path.join(BASE_PATH, airport_code)
+
+        if not os.path.isdir(folder):
+            continue
+
+        result = compute_airport_avg(folder, airport_code)
+
+        if result:
+            results.append(result)
+
+    # sort by highest delay
+    results.sort(key=lambda x: x["avg_delay"], reverse=True)
+
+    return results
+
+
+if __name__ == "__main__":
+    data = compute_all_airports()
+    print(data)
