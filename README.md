@@ -124,20 +124,20 @@ These calculations ensure that delays reflect real operational performance rathe
 
 Additional derived metrics include:
 
-On-time flights: Flights with delay ≤ 15 minutes
-Average delay: Mean delay across flights for a given airline, route, or airport
-Cancellation rate: Percentage of flights marked as cancelled in the dataset
+* On-time flights: Flights with delay ≤ 15 minutes
+* Average delay: Mean delay across flights for a given airline, route, or airport
+* Cancellation rate: Percentage of flights marked as cancelled in the dataset
 
 ---
 
 ## 📸 Dashboard Preview
 
-### 🌍 Global Overview  
+### Global Overview  
 Shows delay comparison across major international airports
 <img width="2173" height="664" alt="Screenshot 2026-05-05 004147" src="https://github.com/user-attachments/assets/a127f6a7-399e-48c3-af6b-34c2898047e0" />
 
 
-### ⏱ Time Analytics 
+### Time Analytics 
 Shows the busiest 3 hour time intervals across major international airports
 <img width="2191" height="638" alt="Screenshot 2026-05-05 004205" src="https://github.com/user-attachments/assets/6bc1dabc-c63a-4fbc-a287-a5b616434030" />
 
@@ -147,13 +147,13 @@ Displays airlines with the highest average delay at YYZ
 <img width="2205" height="654" alt="Screenshot 2026-05-05 004248" src="https://github.com/user-attachments/assets/41224982-f93b-44a2-9f3e-b925e03eb1c6" />
 
 
-### 🔎 Airline Performance Explorer
-Displays the performance of Air Canada at LHR
+### Airline Performance Explorer
+Displays the performance of airlines at different airports around the world
 <img width="2182" height="686" alt="Screenshot 2026-05-05 004333" src="https://github.com/user-attachments/assets/4c512a36-d125-4824-ab0f-a87204dc0ffe" />
 
 
-### 🛣 Route Analysis 
-Shows the best performing airlines based on average delay for the YYZ-YVR route
+### Route Analysis 
+Shows the best performing airlines based on average delay for specific routes
 <img width="2197" height="530" alt="Screenshot 2026-05-05 004358" src="https://github.com/user-attachments/assets/ce29084d-49a0-4a4e-951e-b453d5aebeda" />
 
 ---
