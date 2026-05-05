@@ -142,7 +142,7 @@ Shows the busiest 3 hour time intervals across major international airports
 <img width="2191" height="638" alt="Screenshot 2026-05-05 004205" src="https://github.com/user-attachments/assets/6bc1dabc-c63a-4fbc-a287-a5b616434030" />
 
 
-### ✈️ YYZ Airline Analytics  
+### YYZ Airline Analytics  
 Displays airlines with the highest average delay at YYZ
 <img width="2205" height="654" alt="Screenshot 2026-05-05 004248" src="https://github.com/user-attachments/assets/41224982-f93b-44a2-9f3e-b925e03eb1c6" />
 
