@@ -33,7 +33,7 @@ import pandas as pd
 import plotly.express as px
 
 # -------------------------------
-# 🟩 TAB 1 — ROUTES
+# TAB 1 — ROUTES
 # -------------------------------
 with tab1:
     st.subheader("Busiest Routes from YYZ")
@@ -89,7 +89,7 @@ with tab1:
     else:
         st.warning("No delayed route data")
 # -------------------------------
-# 🟩 TAB 2 — AIRLINE ANALYTICS
+# TAB 2 — AIRLINE ANALYTICS
 # -------------------------------
 with tab2:
     st.subheader("Most Delayed Airlines")
@@ -152,7 +152,7 @@ with tab2:
     
 
 # -------------------------------
-# 🟩 TAB 3 — TIME ANALYTICS
+# TAB 3 — TIME ANALYTICS
 # -------------------------------
 with tab3:
     st.subheader("Average Delay by Time Interval")
