@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from backend.config import BASE_URL, HEADERS
 
 # -----------------------------
-# CONFIG (ONLY CHANGE THIS)
+# CONFIG
 # -----------------------------
 AIRPORT = "AMS"   # <- change this per run
 
