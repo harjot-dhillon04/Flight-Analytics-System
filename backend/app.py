@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import duckdb
-
-from backend.config import DB_PATH
+from postgres import get_pg_connection
+from config import DB_PATH
 
 app = FastAPI()
 
@@ -463,3 +463,30 @@ def db_test():
     result = conn.execute("SELECT COUNT(*) FROM flights").fetchone()
     conn.close()
     return {"rows": result[0]}
+
+@app.get("/postgres/airlines")
+def get_airline_metrics():
+
+    conn = get_pg_connection()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT airline, avg_delay, on_time_pct, cancellation_rate
+        FROM airline_metrics
+        ORDER BY avg_delay DESC
+    """)
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return [
+    {
+        "airline": row[0],
+        "avg_delay": round(float(row[1]), 2) if row[1] is not None else 0.0,
+        "on_time_pct": round(float(row[2]), 2) if row[2] is not None else 0.0,
+        "cancellation_rate": round(float(row[3]), 2) if row[3] is not None else 0.0
+    }
+    for row in rows
+]

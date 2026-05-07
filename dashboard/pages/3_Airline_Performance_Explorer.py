@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API = "http://localhost:8000"
+API = "http://backend:8000"
 
 def safe_get(url, params=None):
     res = requests.get(url, params=params)
